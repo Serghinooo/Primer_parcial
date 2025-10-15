@@ -19,12 +19,12 @@ public class ConversorTextoaMorse {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("=== CONVERSOR DE TEXTO A CÓDIGO MORSE ===");
-        System.out.print("Escribe el texto que quieres convertir: ");
+        System.out.println("Conversor texto a morse");
+        System.out.print("Escribe un texto: ");
         String texto = scanner.nextLine().toUpperCase().trim();
 
         String morse = convertirTextoAMorse(texto);
-        System.out.println("\nCódigo Morse:\n" + morse);
+        System.out.println("Código Morse:" + morse);
 
         scanner.close();
     }
@@ -32,7 +32,7 @@ public class ConversorTextoaMorse {
     private static String convertirTextoAMorse(String texto) {
         StringBuilder resultado = new StringBuilder();
 
-        String[] palabras = texto.split(" "); // separa por palabras
+        String[] palabras = texto.split(" "); 
 
         for (String palabra : palabras) {
             for (int i = 0; i < palabra.length(); i++) {
@@ -40,8 +40,17 @@ public class ConversorTextoaMorse {
                 String codigo = letraAMorse(letra);
                 resultado.append(codigo).append(" ");
             }
-            resultado.append("/ "); // separador de palabras en Morse
+            resultado.append("/ ");
         }
 
         return resultado.toString().trim();
     }
+    private static String letraAMorse(char letra) {
+        for (int i = 0; i < LETRAS.length; i++) {
+            if (LETRAS[i].equals(String.valueOf(letra))) {
+                return MORSE[i];
+            }
+        }
+        return "error";
+    }
+}
