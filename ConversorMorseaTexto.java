@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ConversortextoaMorse {
+public class ConversorMorseaTexto{
     private static final String[] MORSE = {
         ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---",
         "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-",
@@ -18,12 +18,12 @@ public class ConversortextoaMorse {
  public static void main(String[] args) {
         Scanner scanner  = new Scanner(System.in);
 
-        System.out.println("Conversor de texto a morse ");
+        System.out.println("Conversor de morse a texto ");
         System.out.print("Introduce el código Morse: ");
         String morseInput = scanner.nextLine().trim();
 
         String texto = convertirMorseATexto(morseInput);
-        System.out.println("Texto traducido: " + texto);
+        System.out.println( texto);
         scanner.close();
     }
 
