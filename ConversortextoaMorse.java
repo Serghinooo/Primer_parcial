@@ -18,8 +18,7 @@ public class ConversortextoaMorse {
  public static void main(String[] args) {
         Scanner scanner  = new Scanner(System.in);
 
-        System.out.println("=== CONVERSOR DE MORSE A TEXTO ===");
-        System.out.println("Usa espacio entre letras y '/' entre palabras.");
+        System.out.println("Conversor de texto a morse ");
         System.out.print("Introduce el código Morse: ");
         String morseInput = scanner.nextLine().trim();
 
