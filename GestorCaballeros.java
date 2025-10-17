@@ -37,7 +37,7 @@ public class GestorCaballeros {
         int opcion;
 
         do {
-            System.out.println("\n=== ⚔️ GESTOR DE CABALLEROS DEL ZODIACO ⚔️ ===");
+            System.out.println("Gestor de caballeros del zodiaco");
             System.out.println("1. Crear Caballero");
             System.out.println("2. Mostrar Caballeros");
             System.out.println("3. Eliminar Caballero");
@@ -45,17 +45,45 @@ public class GestorCaballeros {
             System.out.println("5. Salir");
             System.out.print("Seleccione una opción: ");
             opcion = scanner.nextInt();
-            scanner.nextLine(); // limpiar buffer
+            scanner.nextLine(); 
 
             switch (opcion) {
                 case 1 -> crearCaballero();
                 case 2 -> mostrarCaballeros();
                 case 3 -> eliminarCaballero();
                 case 4 -> batallaCaballeros();
-                case 5 -> System.out.println("👋 Saliendo del programa...");
-                default -> System.out.println("❌ Opción no válida, intente de nuevo.");
+                case 5 -> System.out.println(" Saliendo del programa...");
+                default -> System.out.println(" Opción no válida, intente de nuevo.");
             }
 
         } while (opcion != 5);
+    }
+    private static void crearCaballero() {
+        System.out.print("Ingrese el nombre del caballero: ");
+        String nombre = scanner.nextLine();
+
+        System.out.print("Ingrese la armadura del caballero: ");
+        String armadura = scanner.nextLine();
+
+        System.out.print("Ingrese el nivel de cosmos (1-100): ");
+        int cosmos = scanner.nextInt();
+        scanner.nextLine();
+
+        Caballero nuevo = new Caballero(nombre, armadura, cosmos);
+        caballeros.add(nuevo);
+
+        System.out.println("✅ Caballero creado con éxito!");
+    }
+
+    private static void mostrarCaballeros() {
+        if (caballeros.isEmpty()) {
+            System.out.println("⚠️ No hay caballeros registrados.");
+            return;
+        }
+
+        System.out.println("\n=== LISTA DE CABALLEROS ===");
+        for (int i = 0; i < caballeros.size(); i++) {
+            System.out.println((i + 1) + ". " + caballeros.get(i));
+        }
     }
    
