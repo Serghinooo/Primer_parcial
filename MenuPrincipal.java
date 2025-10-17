@@ -12,6 +12,7 @@ public class MenuPrincipal {
             System.out.println("3. Verificador mayor edad y signo zodiacal");
             System.out.println("4. Validador numero perfecto");
             System.out.println("5. validador PalindromoCapicua");
+            System.out.println("6. Jugar piedra papel o tijera");
             System.out.println("0. Salir");
             System.out.print("Selecciona una opción: ");
             opcion = sc.nextInt();
@@ -32,6 +33,8 @@ public class MenuPrincipal {
                 case 5:
                     validadorPalindromoCapicua.main(null);
                     break;
+                case 6:
+                    PiedraPapelTijera.main(null);
                 case 0:
                     System.out.println("Saliendo del programa...");
                     break;
