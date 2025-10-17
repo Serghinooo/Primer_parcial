@@ -10,4 +10,23 @@ class Caballero {
         this.nombre = nombre;
         this.armadura = armadura;
         this.cosmos = cosmos;
+        }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getArmadura() {
+        return armadura;
+    }
+
+    public int getCosmos() {
+        return cosmos;
+    }
+
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre + " | Armadura: " + armadura + " | Cosmos: " + cosmos;
+    }
+}
    
