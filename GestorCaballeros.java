@@ -105,7 +105,7 @@ public class GestorCaballeros {
     private static void batallaCaballeros() {
         mostrarCaballeros();
         if (caballeros.size() < 2) {
-            System.out.println("⚠️ Se necesitan al menos 2 caballeros para una batalla.");
+            System.out.println("  necesitan al menos 2 caballeros para una batalla.");
             return;
         }
 
@@ -116,7 +116,23 @@ public class GestorCaballeros {
         scanner.nextLine();
 
         if (c1 < 1 || c1 > caballeros.size() || c2 < 1 || c2 > caballeros.size() || c1 == c2) {
-            System.out.println("❌ Selección inválida.");
+            System.out.println(" Selección inválida");
             return;
         }
+        Caballero cab1 = caballeros.get(c1 - 1);
+        Caballero cab2 = caballeros.get(c2 - 1);
+
+        System.out.println(" Comienza la batalla");
+        System.out.println(cab1.getNombre() + " (" + cab1.getCosmos() + " cosmos) VS " +
+                           cab2.getNombre() + " (" + cab2.getCosmos() + " cosmos)");
+
+        if (cab1.getCosmos() > cab2.getCosmos()) {
+            System.out.println(" El ganador es: " + cab1.getNombre() + " con la armadura de " + cab1.getArmadura());
+        } else if (cab2.getCosmos() > cab1.getCosmos()) {
+            System.out.println(" El ganador es: " + cab2.getNombre() + " con la armadura de " + cab2.getArmadura());
+        } else {
+            System.out.println("¡Es un empate! Ambos caballeros tienen el mismo cosmos.");
+        }
+    }
+}
    
