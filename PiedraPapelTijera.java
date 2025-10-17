@@ -34,5 +34,15 @@ public class PiedraPapelTijera {
 
         sc.close();
     }
+    
+    public static String convertirOpcion(int opcion) {
+        switch (opcion) {
+            case 1: return "Piedra";
+            case 2: return "Papel";
+            case 3: return "Tijera";
+            default: return "Opción inválida";
+        }
+    }
+}
 
         
