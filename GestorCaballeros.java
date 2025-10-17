@@ -72,7 +72,7 @@ public class GestorCaballeros {
         Caballero nuevo = new Caballero(nombre, armadura, cosmos);
         caballeros.add(nuevo);
 
-        System.out.println("✅ Caballero creado con éxito!");
+        System.out.println("Caballero creado con éxito!");
     }
 
     private static void mostrarCaballeros() {
