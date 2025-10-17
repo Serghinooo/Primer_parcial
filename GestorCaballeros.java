@@ -86,4 +86,20 @@ public class GestorCaballeros {
             System.out.println((i + 1) + ". " + caballeros.get(i));
         }
     }
+    private static void eliminarCaballero() {
+        mostrarCaballeros();
+        if (caballeros.isEmpty()) return;
+
+        System.out.print("Ingrese el número del caballero a eliminar: ");
+        int index = scanner.nextInt();
+        scanner.nextLine();
+
+        if (index < 1 || index > caballeros.size()) {
+            System.out.println("❌ Número inválido.");
+            return;
+        }
+
+        Caballero eliminado = caballeros.remove(index - 1);
+        System.out.println("🗑️ Caballero eliminado: " + eliminado.getNombre());
+    }
    
