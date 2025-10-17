@@ -77,11 +77,11 @@ public class GestorCaballeros {
 
     private static void mostrarCaballeros() {
         if (caballeros.isEmpty()) {
-            System.out.println("⚠️ No hay caballeros registrados.");
+            System.out.println(" No hay caballeros registrados.");
             return;
         }
 
-        System.out.println("\n=== LISTA DE CABALLEROS ===");
+        System.out.println("Lista de caballeros");
         for (int i = 0; i < caballeros.size(); i++) {
             System.out.println((i + 1) + ". " + caballeros.get(i));
         }
@@ -95,11 +95,28 @@ public class GestorCaballeros {
         scanner.nextLine();
 
         if (index < 1 || index > caballeros.size()) {
-            System.out.println("❌ Número inválido.");
+            System.out.println(" Número inválido.");
             return;
         }
 
         Caballero eliminado = caballeros.remove(index - 1);
-        System.out.println("🗑️ Caballero eliminado: " + eliminado.getNombre());
+        System.out.println(" Caballero eliminado: " + eliminado.getNombre());
     }
+    private static void batallaCaballeros() {
+        mostrarCaballeros();
+        if (caballeros.size() < 2) {
+            System.out.println("⚠️ Se necesitan al menos 2 caballeros para una batalla.");
+            return;
+        }
+
+        System.out.print("Seleccione el número del primer caballero: ");
+        int c1 = scanner.nextInt();
+        System.out.print("Seleccione el número del segundo caballero: ");
+        int c2 = scanner.nextInt();
+        scanner.nextLine();
+
+        if (c1 < 1 || c1 > caballeros.size() || c2 < 1 || c2 > caballeros.size() || c1 == c2) {
+            System.out.println("❌ Selección inválida.");
+            return;
+        }
    
